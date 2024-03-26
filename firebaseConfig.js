@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-
+import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
 // Initialize Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyAOGg_i3t_nD-yhz8ABbqnPmXWLMuLGhGc",
@@ -13,5 +13,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const cocktailDb = getFirestore(app);
 // For more information on how to access Firebase in your project,
 // see the Firebase documentation: https://firebase.google.com/docs/web/setup#access-firebase
