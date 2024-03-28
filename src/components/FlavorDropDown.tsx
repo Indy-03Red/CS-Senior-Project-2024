@@ -4,17 +4,18 @@ import { Dropdown } from "react-native-element-dropdown";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
 const data = [
-  { label: "Fruity", value: "1" },
-  { label: "Sweet", value: "2" },
-  { label: "Creamy", value: "3" },
-  { label: "Light", value: "4" },
-  { label: "Spicy", value: "5" },
-  { label: "Spiced", value: "6" },
-  { label: "Seasonal", value: "7" },
-  { label: "Fizzy", value: "8" },
-  { label: "Botanical", value: "9" },
-  { label: "Refreshing", value: "10" },
-  { label: "Strong", value: "11" },
+  { label: "No preference", value: "1" },
+  { label: "Fruity", value: "2" },
+  { label: "Sweet", value: "3" },
+  { label: "Creamy", value: "4" },
+  { label: "Light", value: "5" },
+  { label: "Spicy", value: "6" },
+  { label: "Spiced", value: "7" },
+  { label: "Seasonal", value: "8" },
+  { label: "Fizzy", value: "9" },
+  { label: "Botanical", value: "10" },
+  { label: "Refreshing", value: "11" },
+  { label: "Strong", value: "12" },
 ];
 
 const FlavorDropDown = () => {
