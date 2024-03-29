@@ -12,7 +12,6 @@ const firebaseConfig = {
   measurementId: "G-3F9333QYCX",
 };
 
-const app = initializeApp(firebaseConfig);
-const cocktailDb = getFirestore(app);
+export const app = initializeApp(firebaseConfig);
 // For more information on how to access Firebase in your project,
 // see the Firebase documentation: https://firebase.google.com/docs/web/setup#access-firebase

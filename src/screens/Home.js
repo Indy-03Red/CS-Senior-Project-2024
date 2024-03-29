@@ -1,4 +1,5 @@
 import React from "react";
+import { getRecs } from "./Reccomend.ts";
 import { useNavigation } from "@react-navigation/native";
 import { getHeaderTitle } from "@react-navigation/elements";
 import { StatusBar } from "expo-status-bar";
@@ -7,6 +8,7 @@ import { NativeWindStyleSheet } from "nativewind";
 import LiquorDropDown from "../components/LiquorDropDown";
 import FlavorDropDown from "../components/FlavorDropDown";
 import SpecificsDropDown from "../components/SpecificsDropDown";
+
 
 export default function Welcome() {
   const navigation = useNavigation();
@@ -28,7 +30,10 @@ export default function Welcome() {
         <View className="pt-8" />
         <TouchableOpacity
           className="bg-slate-700 mx-16 p-5 px-12 rounded-full "
-          onPress={() => navigation.navigate("Reccomendation")}
+          onPress={() => { 
+            getRecs(LiquorDropDown.labelField, FlavorDropDown.labelField, SpecificsDropDown.labelField);
+            navigation.navigate("Reccomendation");
+          }}
         >
           <Text className="text-white font-bold text-lg self-center">
             Reccommend a Drink
@@ -57,3 +62,4 @@ export default function Welcome() {
 NativeWindStyleSheet.setOutput({
   default: "native",
 });
+
