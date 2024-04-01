@@ -1,11 +1,5 @@
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  query,
-  where,
-  documentId,
-} from "firebase/firestore/lite";
+
+import { getFirestore, collection, getDocs, query, where, documentId } from "firebase/firestore/lite";
 import { db } from "../firebaseConfig";
 
 const ref = db;
