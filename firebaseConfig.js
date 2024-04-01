@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import { getFirestore } from "firebase/firestore";
+
 // Initialize Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyAOGg_i3t_nD-yhz8ABbqnPmXWLMuLGhGc",
@@ -12,6 +13,8 @@ const firebaseConfig = {
   measurementId: "G-3F9333QYCX",
 };
 
-export const app = initializeApp(firebaseConfig);
-// For more information on how to access Firebase in your project,
-// see the Firebase documentation: https://firebase.google.com/docs/web/setup#access-firebase
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+export { db };
