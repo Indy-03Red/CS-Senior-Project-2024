@@ -1,5 +1,5 @@
 import React from "react";
-import { getRecs } from "./Reccomend.ts";
+import { getRecs } from "../ReccomendFetch.ts";
 import { useNavigation } from "@react-navigation/native";
 import { getHeaderTitle } from "@react-navigation/elements";
 import { StatusBar } from "expo-status-bar";
