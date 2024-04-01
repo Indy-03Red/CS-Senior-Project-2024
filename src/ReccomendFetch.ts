@@ -1,8 +1,14 @@
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+  documentId,
+} from "firebase/firestore/lite";
+import { db } from "../firebaseConfig";
 
-import { getFirestore, collection, getDocs, query, where, documentId } from "firebase/firestore/lite";
-
-
-const ref = getFirestore();
+const ref = db;
 export default async function getRecs(Liquor: string, Flavor: string, Specific: string)
 {
     const drinks = collection(ref, 'Drinks');
