@@ -22,8 +22,8 @@ export async function getRecs(Liquor: string, Flavor: string, Specific: string)
     q = await getDocs(
         query(collection(ref, 'Tag:Drinks'), where('Tag', '==', flavorTag))
     )
-    var drinksArray = q.docs[0].get('Drinks').split(",");//Creates an array out of the string of drinks
-    
+    var drinksArray = q.docs[0].get('Drinks').split(", ");//Creates an array out of the string of drinks
+    console.log(drinksArray);
     q = await getDocs(query(drinks, where(documentId(), 'in', drinksArray))); //gets every drink document whose tag is in the flavor list
     drinksArray = [];
 
@@ -31,16 +31,17 @@ export async function getRecs(Liquor: string, Flavor: string, Specific: string)
         const vals = doc.data();
         var liq = false;
         var spec = false;
-        vals.forEach((field) => {
-            if (field.includes(Liquor))
-            {
-                liq = true;
-            }
-            if (field.includes(Specific) || Specific == "No preference")
-            {
-                spec = true;
-            }
-        });
+        // vals.forEach((field) => {
+        //     if (field.includes(Liquor))
+        //     {
+        //         liq = true;
+        //     }
+        //     if (field.includes(Specific) || Specific == "No preference")
+        //     {
+        //         spec = true;
+        //     }
+        // });
+        console.log(doc.data())
         if (liq && spec)
         {
             drinksArray.push(doc.id);
