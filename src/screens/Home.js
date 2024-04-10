@@ -1,5 +1,4 @@
 import React from "react";
-import { getRecs } from "../ReccomendFetch.ts";
 import { useNavigation } from "@react-navigation/native";
 import { getHeaderTitle } from "@react-navigation/elements";
 import { StatusBar } from "expo-status-bar";
@@ -31,7 +30,6 @@ export default function Welcome() {
         <TouchableOpacity
           className="bg-slate-700 mx-16 p-5 px-12 rounded-full "
           onPress={() => { 
-            getRecs(LiquorDropDown.labelField, FlavorDropDown.labelField, SpecificsDropDown.labelField);
             navigation.navigate("Reccomendation");
           }}
         >

@@ -3,7 +3,7 @@ import { getFirestore, collection, getDocs, query, where, documentId } from "fir
 import { db } from "../firebaseConfig";
 
 const ref = db;
-export default async function getRecs(Liquor: string, Flavor: string, Specific: string)
+export async function getRecs(Liquor: string, Flavor: string, Specific: string)
 {
     const drinks = collection(ref, 'Drinks');
 
@@ -28,7 +28,7 @@ export default async function getRecs(Liquor: string, Flavor: string, Specific: 
     drinksArray = [];
 
     q.forEach((doc) => { //Checks each drink to see if they contain the correct liquor or specific
-        const vals = doc.data().values();
+        const vals = doc.data();
         var liq = false;
         var spec = false;
         vals.forEach((field) => {

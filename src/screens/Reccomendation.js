@@ -1,4 +1,5 @@
 import React from "react";
+import { getRecs } from "../ReccomendFetch.ts";
 import { useNavigation } from "@react-navigation/native";
 import { getHeaderTitle } from "@react-navigation/elements";
 import { Text, View, TouchableOpacity } from "react-native";
@@ -7,6 +8,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 export default function Reccomendation() {
   const navigation = useNavigation();
+  getRecs("Rum", "Sweet", "No preference");
   return (
     <View className=" bg-slate-700 flex-1">
       <View className="pl-6 pt-16">
@@ -17,7 +19,7 @@ export default function Reccomendation() {
           <Icon color="white" name="chevron-back" size={30} />
         </TouchableOpacity>
       </View>
-
+      
       <View className="bg-white border-white h-40 w-11/12 border-4 rounded-xl self-center mb-10 mt-5">
         <Text></Text>
       </View>
