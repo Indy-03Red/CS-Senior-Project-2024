@@ -31,22 +31,27 @@ export async function getRecs(Liquor: string, Flavor: string, Specific: string)
         const vals = doc.data();
         var liq = false;
         var spec = false;
-        // vals.forEach((field) => {
-        //     if (field.includes(Liquor))
-        //     {
-        //         liq = true;
-        //     }
-        //     if (field.includes(Specific) || Specific == "No preference")
-        //     {
-        //         spec = true;
-        //     }
-        // });
-        console.log(doc.data())
+        var keys = Object.keys(vals);
+        //console.log(keys);
+        keys.forEach(fieldName => {
+            var fieldVal = vals[fieldName];
+            //console.log(fieldName)
+            if (vals[fieldName].includes(Liquor))
+            {
+                liq = true;
+            }
+            if (vals[fieldName].includes(Specific) || Specific == "No preference")
+            {
+                spec = true;
+            }
+        });
+        
         if (liq && spec)
         {
             drinksArray.push(doc.id);
         }
     });
+    console.log(drinksArray);
     q = await getDocs(query(drinks, where(documentId(), 'in', drinksArray))); //Gets all the drinks within the new array
     q.forEach((doc) => {console.log(doc.data())})
     return q;

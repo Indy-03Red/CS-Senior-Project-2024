@@ -6,9 +6,11 @@ import { Text, View, TouchableOpacity } from "react-native";
 import { NativeWindStyleSheet } from "nativewind";
 import Icon from "react-native-vector-icons/Ionicons";
 
-export default function Reccomendation() {
+export default function Reccomendation({ route })
+{
   const navigation = useNavigation();
-  getRecs("Rum", "Sweet", "No preference");
+  const { liquor, flavor, specific } = route.params;
+  getRecs(liquor, flavor, specific);
   return (
     <View className=" bg-slate-700 flex-1">
       <View className="pl-6 pt-16">

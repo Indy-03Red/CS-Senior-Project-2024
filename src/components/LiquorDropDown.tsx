@@ -4,11 +4,11 @@ import { Dropdown } from "react-native-element-dropdown";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const data = [
-  { label: "Vodka", value: "1" },
-  { label: "Gin", value: "2" },
-  { label: "Whiskey", value: "3" },
-  { label: "Rum", value: "4" },
-  { label: "Tequila", value: "5" },
+  { label: "Vodka", value: "Vodka" },
+  { label: "Gin", value: "Gin" },
+  { label: "Whiskey", value: "Whiskey" },
+  { label: "Rum", value: "Rum" },
+  { label: "Tequila", value: "Tequila" },
 ];
 
 const LiquorDropDown = () => {

@@ -30,7 +30,10 @@ export default function Welcome() {
         <TouchableOpacity
           className="bg-slate-700 mx-16 p-5 px-12 rounded-full "
           onPress={() => { 
-            navigation.navigate("Reccomendation");
+            navigation.navigate("Reccomendation", { 
+              liquor: "Rum",
+             flavor: "Sweet",
+            specific: "Lime"});
           }}
         >
           <Text className="text-white font-bold text-lg self-center">
